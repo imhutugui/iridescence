@@ -2,7 +2,7 @@
 #define GLK_MESH_MODEL_HPP
 
 #include <glk/drawable.hpp>
-
+#include <glk/api_export.hpp>
 namespace guik {
 struct ShaderSetting;
 }  // namespace guik
@@ -12,7 +12,7 @@ namespace glk {
 class Mesh;
 class Texture;
 
-class MeshModel : public glk::Drawable {
+class GLK_API MeshModel : public glk::Drawable {
 public:
   void push_mesh(const int material_id, const std::shared_ptr<glk::Mesh>& mesh);
   void push_material(const guik::ShaderSetting& setting, const std::shared_ptr<glk::Texture>& texture);

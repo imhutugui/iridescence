@@ -8,12 +8,12 @@
 #include <GL/gl3w.h>
 #include <glk/drawable.hpp>
 #include <glk/glsl_shader.hpp>
-
+#include <glk/api_export.hpp>
 namespace glk {
 
 class Texture;
 
-class Mesh : public Drawable {
+class GLK_API Mesh : public Drawable {
 public:
   Mesh(const void* vertices, int vertex_stride, const void* normals, int normal_stride, int num_vertices, const void* indices, int num_indices, bool wireframe = false);
   Mesh(const void* vertices, int vertex_stride, const void* normals, int normal_stride, const void* colors, int color_stride, int num_vertices, const void* indices, int num_indices, bool wireframe = false);

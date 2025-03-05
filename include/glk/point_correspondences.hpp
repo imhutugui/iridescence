@@ -5,7 +5,7 @@
 #include <Eigen/Dense>
 #include <glk/drawable.hpp>
 #include <glk/thin_lines.hpp>
-
+#include <glk/api_export.hpp>
 #ifdef GLK_USE_PCL
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>

@@ -2,7 +2,7 @@
 #define GLK_SPLATTING_HPP
 
 #include <glk/drawable.hpp>
-
+#include <glk/api_export.hpp>
 namespace glk {
 
 class Texture;
@@ -10,7 +10,7 @@ class PointCloudBuffer;
 
 std::shared_ptr<glk::GLSLShader> create_splatting_shader();
 
-class Splatting : public glk::Drawable {
+class GLK_API Splatting : public glk::Drawable {
 public:
   Splatting(const std::shared_ptr<glk::GLSLShader>& shader = nullptr);
   virtual ~Splatting();

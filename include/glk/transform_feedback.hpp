@@ -4,10 +4,10 @@
 #include <iostream>
 #include <GL/gl3w.h>
 #include <glk/drawable.hpp>
-
+#include <glk/api_export.hpp>
 namespace glk {
 
-class TransformFeedback : public glk::Drawable {
+class GLK_API TransformFeedback : public glk::Drawable {
 public:
   TransformFeedback(size_t buffer_size, GLenum usage = GL_STATIC_DRAW);
   ~TransformFeedback();

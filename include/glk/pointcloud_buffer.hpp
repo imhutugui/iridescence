@@ -19,7 +19,7 @@ struct AuxBufferData {
   GLuint buffer;
 };
 
-class PointCloudBuffer : public glk::Drawable {
+class GLK_API PointCloudBuffer : public glk::Drawable {
 public:
   using Ptr = std::shared_ptr<PointCloudBuffer>;
 

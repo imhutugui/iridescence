@@ -9,14 +9,14 @@
 #include <glk/drawable.hpp>
 #include <glk/glsl_shader.hpp>
 #include <glk/type_conversion.hpp>
-
+#include <glk/api_export.hpp>
 namespace glk {
 
 /**
  * @brief A class to draw a set of GL_LINES
  *
  */
-class ThinLines : public Drawable {
+class GLK_API ThinLines : public Drawable {
 public:
   ThinLines(const float* vertices, int num_vertices, bool line_strip = false);
   ThinLines(const float* vertices, const float* colors, int num_vertices, bool line_strip = false);

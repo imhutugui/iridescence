@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
+set(VCPKG_ROOT "E:/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE PATH "")
+set(CMAKE_TOOLCHAIN_FILE ${VCPKG_ROOT})
 project(iridescence VERSION 0.1.4 LANGUAGES C CXX)
 
-option(BUILD_EXAMPLES "Build examples" OFF)
+option(BUILD_EXAMPLES "Build examples" ON)
 option(BUILD_PYTHON_BINDINGS "Build python bindings" OFF)
 option(BUILD_WITH_MARCH_NATIVE "Build with -march=native" OFF)
 option(BUILD_EXT_TESTS "Build test optional libraries" OFF)
@@ -13,6 +15,8 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build." FORCE)
   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
+
+set(CMAKE_INSTALL_PREFIX "D:/Programs/iridescence")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_LIST_DIR}/cmake")
@@ -26,12 +30,12 @@ endif()
 
 find_package(OpenGL REQUIRED)
 
-find_package(glm)
+find_package(glm CONFIG REQUIRED)
 find_package(glfw3)
 find_package(Eigen3)
 find_package(PNG)
 find_package(JPEG)
-find_package(assimp QUIET)
+find_package(assimp CONFIG REQUIRED)
 
 
 if(NOT glm_FOUND)
@@ -87,6 +91,7 @@ add_definitions(-DDATA_PATH_GUESS="${CMAKE_SOURCE_DIR}/data")
 
 if(MSVC)
   add_compile_definitions(NOMINMAX)
+  add_compile_definitions(_WIN32)
   add_compile_definitions(_USE_MATH_DEFINES)
   add_compile_options(/wd4018 /wd4244 /wd4267 /wd4305 /wd4312)
   add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/source-charset:utf-8>")
@@ -96,7 +101,7 @@ else()
 endif()
 
 if(${assimp_FOUND})
-  list(APPEND EXTRA_LIBRARIES assimp)
+  list(APPEND EXTRA_LIBRARIES assimp::assimp)
   list(APPEND EXTRA_SOURCE src/glk/io/mesh_io.cpp)
 endif()
 

@@ -5,10 +5,10 @@
 #include <Eigen/Dense>
 #include <glk/drawable.hpp>
 #include <glk/thin_lines.hpp>
-
+#include <glk/api_export.hpp>
 namespace glk {
 
-class PointNormalsBuffer : public glk::Drawable {
+class GLK_API PointNormalsBuffer : public glk::Drawable {
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
   using Ptr = std::shared_ptr<PointNormalsBuffer>;

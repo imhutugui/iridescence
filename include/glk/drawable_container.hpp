@@ -5,14 +5,14 @@
 #include <Eigen/Core>
 
 #include <glk/drawable.hpp>
-
+#include <glk/api_export.hpp>
 namespace guik {
 struct ShaderSetting;
 }
 
 namespace glk {
 
-class DrawableContainer : public glk::Drawable {
+class GLK_API DrawableContainer : public glk::Drawable {
 public:
   using Ptr = std::shared_ptr<Drawable>;
   using ConstPtr = std::shared_ptr<const Drawable>;

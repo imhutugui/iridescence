@@ -3,12 +3,12 @@
 
 #include <memory>
 #include <glk/drawable.hpp>
-
+#include <glk/api_export.hpp>
 namespace glk {
 
 class Texture;
 
-class GridMap : public Drawable {
+class GLK_API GridMap : public Drawable {
 public:
   enum class ColorMode { RAW = 0, TURBO, PROB, PROB_TURBO, RGBA };
 

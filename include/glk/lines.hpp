@@ -9,14 +9,14 @@
 #include <glk/drawable.hpp>
 #include <glk/glsl_shader.hpp>
 #include <glk/type_conversion.hpp>
-
+#include <glk/api_export.hpp>
 namespace glk {
 
 /**
  * @brief A class to draw a set of lines
  *
  */
-class Lines : public Drawable {
+class GLK_API Lines : public Drawable {
 public:
   Lines(float line_width, const Eigen::Vector3f* vertices, int num_points, bool line_strip = false);
   Lines(float line_width, const Eigen::Vector3f* vertices, const Eigen::Vector4f* colors, int num_points, bool line_strip = false);
