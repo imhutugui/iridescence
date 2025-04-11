@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-set(VCPKG_ROOT "E:/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE PATH "")
-set(CMAKE_TOOLCHAIN_FILE ${VCPKG_ROOT})
-project(iridescence VERSION 0.1.4 LANGUAGES C CXX)
+project(iridescence VERSION 0.1.5 LANGUAGES C CXX)
 
 option(BUILD_EXAMPLES "Build examples" ON)
 option(BUILD_PYTHON_BINDINGS "Build python bindings" OFF)
